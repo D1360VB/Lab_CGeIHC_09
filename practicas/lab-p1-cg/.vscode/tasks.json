@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar C++",
+      "type": "shell",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/main.cpp",  // Archivo fuente principal
+        "-o",
+        "${workspaceFolder}/main",      // Generar ejecutable
+        "-lGL", "-lGLEW", "-lglfw",     // Librerías OpenGL, GLEW, GLFW
+        "-I${workspaceFolder}/include", // Directorio de headers
+        "-L${workspaceFolder}/lib"      // Directorio de librerías
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compilación C++ con OpenGL, GLEW y GLFW"
+    }
+  ]
+}
+
